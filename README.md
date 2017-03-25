@@ -103,7 +103,11 @@ npm start
 
 * go back to the Facebook Developer page and add a new webhook.
 
-[webhook]: https://blog.recast.ai/wp-content/uploads/2016/09/S%C3%A9lection_020.png "Webhook page"
+[webhook]: https://cdn.recast.ai/man/recast-ai-messenger-9.png "Webhook page"
+
+* Paste the ngrok https url and paste the verify token of your config file.
+
+[webhook]: https://cdn.recast.ai/man/recast-ai-messenger-2.png "Webhook page"
 
 ![alt text][webhook]
 * Subscribe your page to the webhook you just created.
