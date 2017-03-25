@@ -103,8 +103,8 @@ npm start
 
 * go back to the Facebook Developer page and add a new webhook.
 
-[webhook]: https://cdn.recast.ai/man/recast-ai-messenger-9.png "Webhook page"
-![alt text][webhook]
+[webhook1]: https://cdn.recast.ai/man/recast-ai-messenger-9.png "Webhook1 page"
+![alt text][webhook1]
 
 * Paste the ngrok https url and paste the verify token of your config file.
 
