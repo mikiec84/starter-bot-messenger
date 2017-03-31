@@ -73,7 +73,7 @@ git clone https://github.com/RecastAI/bot-messenger.git
 
 * Copy your Recast.AI `Recast.AI access token`
 * Copy your page access Token `Token of your Page`
-* Copy your validationToken `The token of your Webhook`
+* Set your validationToken with the string you want. This token will be used later in this tutorial.
 
 ```bash
 vim config.js
@@ -127,7 +127,7 @@ npm start
 
 #### SDK usage
 * All you need for your bot is in the bot.js file. The call to Recast.AI is already done.
-* ```client.textConverse(message.body, { conversationToken: senderID })``` To use this method you need to pass the user's input, and  a unique conversation token. This token can be the senderId of the messenger chat. This token will create for each users a specific conversation with your bot.
+* ```client.request.converseText(message.body, { conversationToken: senderID })``` To use this method you need to pass the user's input, and  a unique conversation token. This token can be the senderId of the messenger chat. This token will create for each users a specific conversation with your bot.
 * ```res.reply()``` To get the first reply of your bot.
 * ```res.replies``` To get an array of all your replies.
 * ``` res.action``` Get the object action. When an action is complete you will have the ```action.done = true ``` and you will be able to trigger a specific behavior.
@@ -142,7 +142,7 @@ function handleMessage(event) {
   const messageText = event.message.text
   const messageAttachments = event.message.attachments
   if (messageText) {
-    client.textConverse(messageText, { conversationToken: senderID }).then((res) => {
+    client.request.converseText(messageText, { conversationToken: senderID }).then((res) => {
       const reply = res.reply()               /* To get the first reply of your bot. */
       const replies = res.replies             /* An array of all your replies */
       const action = res.action               /* Get the object action. You can use 'action.done' to trigger a specification action when it's at true. */
@@ -183,6 +183,9 @@ function handleMessage(event) {
 
 Henri Floren - Recast.AI
 henri.floren@recast.ai
+
+Marian André - Recast.AI
+marian.andre@recast.ai
 
 You can follow us on Twitter at [@recastai](https://twitter.com/recastai) for updates and releases.
 

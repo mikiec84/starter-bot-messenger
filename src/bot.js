@@ -1,15 +1,15 @@
 import { replyMessage, replyButton } from './facebook.js'
 import config from './../config.js'
-import { Client } from 'recastai'
+import recastai from 'recastai'
 
-const client = new Client(config.recastToken, config.language)
+const client = new recastai(config.recastToken)
 
 function handleMessage(event) {
   const senderID = event.sender.id
   const messageText = event.message.text
   const messageAttachments = event.message.attachments
   if (messageText) {
-    client.textConverse(messageText, { conversationToken: senderID }).then((res) => {
+    client.request.converseText(messageText, { conversationToken: senderID }).then((res) => {
       const reply = res.reply()               /* To get the first reply of your bot. */
       const replies = res.replies             /* An array of all your replies */
       const action = res.action               /* Get the object action. You can use 'action.done' to trigger a specification action when it's at true. */
